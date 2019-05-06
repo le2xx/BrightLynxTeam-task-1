@@ -1,7 +1,7 @@
 const content = () => {
-	const form = document.getElementById('form');
-	const inputs = form.getElementsByTagName('input');
-	const buttons = form.getElementsByTagName('button');
+	const form = document.querySelector('.content');
+	const inputs = form.querySelectorAll('.content__input');
+	const button = form.querySelector('.content__button');
 
 	const sumInVal = () => {
 		const result = Array.prototype.slice.call(inputs)
@@ -10,8 +10,7 @@ const content = () => {
 		alert('Результат: ' + Math.round(result * 100) / 100 );
 	};
 
-	Array.prototype.forEach.call(buttons, (node) => {
-		node.addEventListener('click', sumInVal);
-	});
+	button.addEventListener('click', sumInVal);
+
 };
 export { content };
